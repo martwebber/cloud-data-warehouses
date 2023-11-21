@@ -5,8 +5,22 @@ import configparser
 config = configparser.ConfigParser()
 config.read("dwh.cfg")
 
+'''
+
+SQL queries to create tables in Redshift
+
+Variables:
+
+LOG_DATA: stores the log data S3 bucket path
+LOG_PATH: stores the log path S3 bucket for json format
+SONG_DATA: stores the songs data S3 bucket path
+IAM_ROLE: stores IAM role and ARN details for the Amazon Redshift database
+
+'''
+
+
 # Define variables from the configuration file
-LOG_DATA = config.get("S3", "LOG_DATA")
+LOG_DATA = config.get("S3", "LOG_DATA"):
 LOG_PATH = config.get("S3", "LOG_JSONPATH")
 SONG_DATA = config.get("S3", "SONG_DATA")
 IAM_ROLE = config.get("IAM_ROLE", "ARN")
